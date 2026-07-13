@@ -1,0 +1,42 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual environments
+venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+
+# Project-specific / Large files
+datasets/
+finetune/datasets/
+finetune/runs/
+*.pt
+geoquery_report.pdf
+.DS_Store
+
+# Streamlit/HuggingFace Cache
+.streamlit/
+.cache/

@@ -1,0 +1,21 @@
+# Core app
+streamlit>=1.35.0
+
+# Deep learning. On Apple Silicon (M1/M2/M3/M4), the standard PyPI build
+# already includes MPS (Metal) GPU support — no special index URL needed,
+# unlike CUDA machines. Just: pip install torch torchvision
+torch>=2.2.0
+torchvision>=0.17.0
+
+transformers>=4.40.0        # first version with GroundingDinoForObjectDetection
+accelerate>=0.28.0
+
+# Image + array handling
+pillow>=10.0.0
+numpy>=1.26.0
+opencv-python-headless>=4.9.0
+scikit-learn>=1.4.0         # dominant-color extraction (KMeans)
+
+# Report export
+reportlab>=4.1.0
+streamlit-image-coordinates>=0.1.7

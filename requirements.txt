@@ -1,22 +1,21 @@
 # Core app
 streamlit>=1.35.0
 
-# Deep learning. On Apple Silicon (M1/M2/M3/M4), the standard PyPI build
-# already includes MPS (Metal) GPU support — no special index URL needed,
-# unlike CUDA machines. Just: pip install torch torchvision
-torch>=2.2.0
-torchvision>=0.17.0
+# Deep learning — CPU-only torch for Streamlit Cloud compatibility
+# (Streamlit Cloud runs on CPU; MPS/CUDA not available)
+--extra-index-url https://download.pytorch.org/whl/cpu
+torch
+torchvision
 
-transformers>=4.40.0        # first version with GroundingDinoForObjectDetection
+transformers>=4.40.0
 accelerate>=0.28.0
 
 # Image + array handling
 pillow>=10.0.0
 numpy>=1.26.0
-# Note: ultralytics below installs opencv-python; libgl1 in packages.txt provides libGL.so.1
-scikit-learn>=1.4.0         # dominant-color extraction (KMeans)
+scikit-learn>=1.4.0
 
-# YOLOv8 object detector (installs opencv-python as a dependency)
+# YOLOv8 object detector
 ultralytics>=8.0.0
 
 # Report export

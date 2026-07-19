@@ -18,6 +18,8 @@ scikit-learn>=1.4.0         # dominant-color extraction (KMeans)
 
 # YOLOv8 object detector
 ultralytics>=8.0.0
+# Force headless OpenCV to override ultralytics' full opencv (avoids libGL dependency)
+opencv-python-headless>=4.9.0
 
 # Report export
 reportlab>=4.1.0

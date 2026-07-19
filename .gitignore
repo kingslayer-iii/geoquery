@@ -37,6 +37,10 @@ finetune/runs/
 geoquery_report.pdf
 .DS_Store
 
+# Technical report source (competition-specific, not part of the public project)
+technical_report.pdf
+technical_report.tex
+
 # Streamlit/HuggingFace Cache
 .streamlit/
 .cache/

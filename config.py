@@ -106,8 +106,12 @@ PREFERRED_DEVICE = "mps"
 # Set USE_YOLO = True after training your own YOLOv8 model using
 # finetune/colab_train.py. This replaces Grounding DINO with your
 # fine-tuned model for significantly better accuracy on the 6 classes.
-USE_YOLO = True
+#
+# On Streamlit Cloud (or any environment where best.pt is not present),
+# this will automatically fall back to Grounding DINO — no crash.
+import os as _os
 YOLO_WEIGHTS = "finetune/best.pt"     # path to your trained weights
+USE_YOLO = _os.path.exists(YOLO_WEIGHTS)  # auto-detect: True locally, False on cloud
 YOLO_CONFIDENCE = 0.40                 # min confidence for YOLO detections
 YOLO_IOU_THRESHOLD = 0.45             # NMS IoU threshold for YOLO
 

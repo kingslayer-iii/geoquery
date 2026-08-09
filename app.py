@@ -277,15 +277,18 @@ if st.session_state.image is not None:
     col_img, col_chat = st.columns([1, 1], gap="large")
 
     with col_img:
-        # Annotated image (clickable!)
-        from streamlit_image_coordinates import streamlit_image_coordinates
+        # Annotated image (clickable with graceful fallback)
         from utils.intent_router import Intent
-        
-        coords = streamlit_image_coordinates(
-            st.session_state.annotated_image,
-            key="image_clicker",
-            use_column_width=True
-        )
+        coords = None
+        try:
+            from streamlit_image_coordinates import streamlit_image_coordinates
+            coords = streamlit_image_coordinates(
+                st.session_state.annotated_image,
+                key="image_clicker",
+                use_column_width=True
+            )
+        except Exception:
+            st.image(st.session_state.annotated_image, use_container_width=True)
         
         if coords is not None and coords != st.session_state.get("last_coords"):
             st.session_state["last_coords"] = coords

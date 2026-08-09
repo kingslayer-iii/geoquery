@@ -1,21 +1,10 @@
-# Core app
-streamlit>=1.35.0,<1.37.0
-
-# Deep learning
+streamlit
 torch
 torchvision
-
-transformers>=4.40.0
-accelerate>=0.28.0
-
-# Image + array handling
-pillow>=10.0.0
-numpy>=1.26.0
-scikit-learn>=1.4.0
-
-# YOLOv8 object detector
-ultralytics>=8.0.0
-
-# Report export
-reportlab>=4.1.0
-streamlit-image-coordinates>=0.1.7
+transformers
+accelerate
+pillow
+numpy
+scikit-learn
+ultralytics
+reportlab
